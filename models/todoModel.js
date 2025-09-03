@@ -27,6 +27,15 @@ const todoModel = new Schema(
   }
 )
 
+todoModel.methods.remove = async function () {
+  try {
+    await this.deleteOne();
+    console.log("Todo removed successfully");
+  } catch (error) {
+    console.error("Error removing todo:", error);
+  }
+};
+
 const Todo = mongoose.model("Todo", todoModel)
 
 export default Todo
