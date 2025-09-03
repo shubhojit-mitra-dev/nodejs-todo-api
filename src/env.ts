@@ -12,6 +12,7 @@ const envSchema = z.object({
   DB_HOST: z.string().default('localhost'),
   DB_PORT: z.string().transform((val) => parseInt(val, 10)).pipe(z.number().positive()).default(27017),
   CORS_URL: z.url().default('http://localhost:3000'),
+  LOG_DIR: z.string().default('logs'),
 });
 
 const parseEnv = () => {
