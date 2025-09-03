@@ -1,11 +1,11 @@
-import express from "express"
+import express, { Router } from "express"
 import {
   loginUser,
   logoutUser,
   registerUser,
-} from "../controllers/userController.js"
+} from "@/controllers/userController"
 
-const router = express.Router()
+const router: Router = express.Router()
 
 router.route("/login").post(loginUser)
 router.route("/register").post(registerUser)

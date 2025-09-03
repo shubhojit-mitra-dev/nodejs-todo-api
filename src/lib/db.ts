@@ -1,5 +1,11 @@
 import mongoose from "mongoose"
-import { db } from "../config.js"
+import env from "@/env"
+
+const db = {
+  name: env.DB_NAME,
+  host: env.DB_HOST,
+  port: env.DB_PORT,
+}
 
 const dbURI = `mongodb://${db.host}:${db.port}/${db.name}`
 
